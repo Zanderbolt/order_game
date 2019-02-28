@@ -1,0 +1,47 @@
+<div class="row" >
+    <div class="col-2"></div>
+    <div class="col-2 ">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_01" (click)="clickCard(1)">
+          <div class="front">{{userOrder[0]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+    <div class="col-2">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_02" (click)="clickCard(2)">
+          <div class="front">{{userOrder[1]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+    <div class="col-2">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_03" (click)="clickCard(3)">
+          <div class="front">{{userOrder[2]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-2">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_04" (click)="clickCard(4)">
+          <div class="front">{{userOrder[3]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-2" >
+      <button type="button" [disabled]="bloquearBotones"  class="btn btn-info btn-block" (click)="resetCards()"> <i class="fas fa-recycle"></i>
+        RESET</button>
+      <button type="button" [disabled]="bloquearBotones" class="btn btn-success btn-block" (click)="checkScore()"> <i class="fas fa-save"></i>
+        GUARDAR</button>
+    </div>
+  </div>

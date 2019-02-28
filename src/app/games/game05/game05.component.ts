@@ -1,28 +1,24 @@
-import { Component } from '@angular/core';
-import { PuntuacionService } from './puntuacion.service';
+import { Component, OnInit } from '@angular/core';
+import { PuntuacionService } from '../../puntuacion.service';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-game05',
+  templateUrl: './game05.component.html',
+  styleUrls: ['./game05.component.css']
 })
-
-export class AppComponent {
-
-  constructor(private puntuacionService: PuntuacionService) {
-  }
+export class Game05Component implements OnInit {
 
   actualNumber = 0;
   list: number[] = [1, 2, 3, 4];
   userOrder: number[] = [0, 0, 0, 0];
-  correctOrder: number[] = [2, 3, 1, 4];
-  title = 'app';
-  puntuacion = 0;
-  mostrarResultado = false;
-  
+  correctOrder: number[] = [3, 1, 2, 4];
+
   bloquearBotones = false;
   numeroIntentos = 10;
 
+
+  constructor(private puntuacionService: PuntuacionService) { }
 
   clickCard(selectedCard: number) {
     if (this.actualNumber < 4) {
@@ -50,11 +46,10 @@ export class AppComponent {
     else {
       this.numeroIntentos--;
       alert("Incorrecto, te quedan " + this.numeroIntentos + " Intentos")
-      if (this.numeroIntentos == 0)
-        {
-          this.bloquearBotones = true;
-          this.puntuacionService.ejerciciosRealizados++;
-        }
+      if (this.numeroIntentos == 0) {
+        this.bloquearBotones = true;
+        this.puntuacionService.ejerciciosRealizados++;
+      }
     }
   }
 
@@ -64,20 +59,8 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    // this.actualNumber = 0;
   }
 
-  checkResults() {
-    if (this.puntuacionService.ejerciciosRealizados < 10) {
-      alert("Te faltan " + (10 - this.puntuacionService.ejerciciosRealizados) + " ejercicios por realizar");
-    }
-    else {
-      this.mostrarResultado = true;
-      this.puntuacion = this.puntuacionService.puntuacion;
-    }
-  }
+  
+
 }
-
-
-
-

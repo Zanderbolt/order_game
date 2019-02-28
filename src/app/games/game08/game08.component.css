@@ -8,27 +8,23 @@
 }
 
 .F01_01{
-    background-image: url("../resources/F01_01.PNG");
+    background-image: url("../../../resources/F08_01.PNG");
     background-size: cover;      
 }
 
 .F01_02{
-    background-image: url("../resources/F01_02.PNG");
+    background-image: url("../../../resources/F08_02.PNG");
     background-size: cover;     
 }
 
 .F01_03{
-    background-image: url("../resources/F01_03.PNG");
+    background-image: url("../../../resources/F08_03.PNG");
     background-size: cover;       
 }
 
 .F01_04{
-    background-image: url("../resources/F01_04.PNG");
+    background-image: url("../../../resources/F08_04.PNG");
     background-size: cover;        
-}
-
-.jumbotron {
-    background-image: url("../resources/vintageChess.jpg")
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);

@@ -1,20 +1,122 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="container titulo" align="center">
+        <div class="jumbotron ">
+          <h1> <strong> ¡Welcome to my Sequence Game! </strong></h1> <br>
+          <h4>Enumera las imagenes en el orden correcto. Por cada error se restara <strong> 100 puntos </strong>al final</h4>
+          <hr>
+          <h5>El resultado se mostrara tras haber terminado los 10 ejercicios</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 
+
+</div>
+<!-- *ngFor="let item of list" -->
+<div class="container margen tituloCards">
+  <div class="row" >
+    <div class="col-2"></div>
+    <div class="col-2 ">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_01" (click)="clickCard(1)">
+          <div class="front">{{userOrder[0]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+    <div class="col-2">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_02" (click)="clickCard(2)">
+          <div class="front">{{userOrder[1]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+    <div class="col-2">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_03" (click)="clickCard(3)">
+          <div class="front">{{userOrder[2]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-2">
+      <label>
+        <input type="checkbox" />
+        <div class="card F01_04" (click)="clickCard(4)">
+          <div class="front">{{userOrder[3]}}</div>
+          <div class="back"></div>
+        </div>
+      </label>
+    </div>
+
+    <div class="col-2" >
+      <button type="button" [disabled]="bloquearBotones"  class="btn btn-info btn-block" (click)="resetCards()"> <i class="fas fa-recycle"></i>
+        RESET</button>
+      <button type="button" [disabled]="bloquearBotones" class="btn btn-success btn-block" (click)="checkScore()"> <i class="fas fa-save"></i>
+        GUARDAR</button>
+    </div>
+  </div>
+  <!-- END GAME 1 -->
+
+  <br>
+  <!-- GAME 2 -->
+  <app-game02></app-game02>
+  <br>
+  <!-- GAME 3 -->
+  <app-game03></app-game03>
+  <br>
+  <!-- GAME 4 -->
+  <app-game04></app-game04>
+  <br>
+  <!-- GAME 5 -->
+  <app-game05></app-game05>
+  <br>
+  <!-- GAME 6 -->
+  <app-game06></app-game06>
+  <br>
+  <!-- GAME 7 -->
+  <app-game07></app-game07>
+  <br>
+  <!-- GAME 8 -->
+  <app-game08></app-game08>
+  <br>
+  <!-- GAME 9 -->
+  <app-game09></app-game09>
+  <br>
+  <!-- GAME 10 -->
+  <app-game10></app-game10>
+
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <button  type="button" class="btn btn-primary btn-lg btn-block" (click)="checkResults()">¡Ver resultados!</button>
+    </div>
+    <div class="col-3"></div>
+  </div>
+  <br>
+  <div class="container" align="center" *ngIf="mostrarResultado">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <h2>Tu puntuación es:</h2>
+        <h3> {{puntuacion}} </h3>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<br>
